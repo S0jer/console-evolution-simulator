@@ -1,0 +1,35 @@
+plugins {
+    id 'java'
+    id 'application'
+    id 'org.openjfx.javafxplugin' version '0.0.10'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+    javafx {
+        version = "18"
+        modules = [ "javafx.controls", "javafx.fxml", "javafx.web"]
+    }
+}
+
+dependencies {
+    implementation 'org.jetbrains:annotations:22.0.0'
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.8.2'
+    testImplementation group: 'org.assertj', name: 'assertj-core', version: '3.6.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.2'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+application {
+mainClassName = 'agh.ics.oop.World'
+}
+
+run {
+    args "f", "f", "r", "l"
+}
